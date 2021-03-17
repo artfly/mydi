@@ -1,16 +1,20 @@
 package com.github.artfly.repo;
 
+import com.github.artfly.di.Autowired;
+import com.github.artfly.di.Component;
 import com.github.artfly.log.Logger;
 
 import java.util.HashMap;
 import java.util.Map;
 
+@Component
 public class UserRepository {
 
     private final Map<Integer, User> db = new HashMap<>();
     private final Logger logger;
     private int cnt;
 
+    @Autowired
     public UserRepository(Logger logger) {
         this.logger = logger;
     }

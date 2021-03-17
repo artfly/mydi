@@ -14,7 +14,7 @@ public class ObjectsGraph {
     public<T> T create(Class<T> clazz) {
         @SuppressWarnings("unchecked") Factory<T> factory = (Factory<T>) factories.get(clazz);
         if (factory == null) {
-            factory = new ReflectionFactory<>();
+            factory = ReflectionFactory.create(clazz);
             factories.put(clazz, factory);
         }
         return factory.create(clazz, this);

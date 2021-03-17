@@ -1,14 +1,18 @@
 package com.github.artfly.web;
 
+import com.github.artfly.di.Autowired;
+import com.github.artfly.di.Component;
 import com.github.artfly.log.Logger;
 import com.github.artfly.repo.User;
 import com.github.artfly.repo.UserRepository;
 
+@Component
 public class UserController {
 
     private final UserRepository repository;
     private final Logger logger;
 
+    @Autowired
     public UserController(UserRepository repository, Logger logger) {
         this.repository = repository;
         this.logger = logger;
